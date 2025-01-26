@@ -2,7 +2,7 @@
 
 NUMBER=600
 
-if [ $NUMBER -gt 400 ]
+if [ $NUMBER -gt 800 ]
 
 then
     echo "given number is  greather than $NUMBER"
