@@ -9,4 +9,8 @@ then
 else
     echo "given number is less than or equal to $NUMBER"
 
+date=$(date)
+
+echo "time stamp is $date"
+
 fi
