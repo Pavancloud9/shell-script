@@ -2,3 +2,5 @@
 
 echo "please enter your username::"
 
+echo "username entered:"
+
