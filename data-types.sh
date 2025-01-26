@@ -2,5 +2,5 @@
 
 echo "please enter your username::"
 
-echo "username entered:"
+echo "username entered:$USERNAME"
 
