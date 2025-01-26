@@ -1,8 +1,8 @@
 #!/bin/bash
 
-NUMBER=100
+NUMBER=600
 
-if [ $NUMBER -gt 200 ]
+if [ $NUMBER -gt 400 ]
 
 then
     echo "given number is  greather than $NUMBER"
