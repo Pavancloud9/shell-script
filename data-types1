@@ -1,7 +1,7 @@
-#!/bin/bash
+!#/bin/bash
 
-echo "please enter your username::"
+echo "please enter your username"
 
 read USERNAME
 
-echo "username entered: $USERNAME"
+echo "username entered is $USERNAME"
