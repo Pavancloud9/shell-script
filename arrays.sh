@@ -6,4 +6,4 @@ echo "First name: ${HEROS[0]}"
 echo "Second name: ${HEROS[1]}"
 echo "Third name: ${HEROS[2]}"
 
-fi
+echo "All name: ${HEROS[@]}"
