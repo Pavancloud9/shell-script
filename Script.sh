@@ -8,6 +8,7 @@ then
     exit
 fi
 
+
 dnf install mysql
 
 if [ $? -ne 0 ]
