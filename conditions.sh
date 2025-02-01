@@ -8,3 +8,5 @@ then
     echo "given number is greater than $NUMBER"
 else 
     echo "given number is lesser or equal to $NUMBER"
+
+fi
