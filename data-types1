@@ -3,3 +3,5 @@
 echo "please enter your username::"
 
 read username
+
+echo "username entered: $USERNAME"
