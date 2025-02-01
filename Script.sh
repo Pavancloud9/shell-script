@@ -15,7 +15,7 @@ then
     echo "Installing mysql...FAILURE"
     exit
 else
-    else "Installing mysql....SUCCESS"
+    echo "Installing mysql....SUCCESS"
 fi
 
 dnf install git
