@@ -6,6 +6,8 @@ if [ $USERID -ne 0 ]
 then
     echo "ERROR: you must have sudo access to execute this script"
     exit
+fi
+
 dnf install mysql
 
 if [ $? -ne 0 ]
@@ -24,5 +26,4 @@ then
     exit
 else
     echo "Installing Git...SUCCESS"
-
 fi
