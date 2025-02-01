@@ -24,4 +24,5 @@ then
     exit
 else
     echo "Installing Git...SUCCESS"
+
 fi
