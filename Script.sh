@@ -7,3 +7,5 @@ then
     echo "ERROR: you must have sudo access to execute this script"
 
 dnf install mysql
+
+fi
