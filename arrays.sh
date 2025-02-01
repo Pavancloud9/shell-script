@@ -1,9 +1,7 @@
 #/bin/bash
 
-NAMES=("sai" "pavan" "arjun")
+HEROS=("allu" "arjun" "pushpa")
 
-echo "First name: ${NAMES=[0]}"
-echo "second name: ${NAMES[1]}"
-echo "Third name: ${NAMES[3]}"
-
-echo "All names are: ${NAMES[@]}"
+echo "First name: ${HEROS[0]"
+echo "Second name: ${HEROS[2]}"
+echo "Third name: ${HEROS[3]}"
