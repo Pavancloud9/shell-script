@@ -18,7 +18,7 @@ else
    echo "Installing mysql...SUCCESS"
 fi
 
-dnf install git 
+dnf install gitggg 
 
 if [ $? -ne 0 ]
 then
