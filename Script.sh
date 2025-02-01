@@ -25,5 +25,5 @@ then
     echo "Installing git...FAILURE"
     exit
 else
-   echo "installing git success"
+    echo "installing git success"
 fi
