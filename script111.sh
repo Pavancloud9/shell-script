@@ -24,6 +24,8 @@ else
    echo "mysql is already...INSTALLED"
 fi
 
+#################################
+
 dnf list installed git
 
 if [ $? -ne 0 ]
