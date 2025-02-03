@@ -9,3 +9,15 @@ if [ $USERID -ne 0 ]
 fi
 
 dnf list installed mysql
+
+if [ $? -ne 0 ]
+then
+    dnf install mysql
+if [ $? -ne 0 ]
+then
+   echo "Installing mysql...FAILURE"
+   exit
+else
+   echo "Installing mysql...SUCCESS"
+else 
+   echo "MySQL is already...INSTALLED"
