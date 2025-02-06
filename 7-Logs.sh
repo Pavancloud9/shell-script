@@ -3,6 +3,7 @@
 USERID=$(id -u)
 
 LOGS_FOLDER="/var/log/shellscripts.logs"
+LOG_FILE=$(echo $0 | cut -d "." -f1 )
 
 VALIDATE(){
        if [ $1 -ne 0 ]
