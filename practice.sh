@@ -16,7 +16,7 @@ else
 fi
 }
 
-echo "script started exectuing at $TIMESTAMP"
+echo "script started exectuing at $TIMESTAMP" &>>$LOG_FILE 
 
 if [ $USERID -ne 0 ]
 then
