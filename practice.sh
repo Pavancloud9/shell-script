@@ -16,7 +16,7 @@ else
 fi
 }
 
-echo "script started exectuing at "
+echo "script started exectuing at $TIMESTAMP"
 
 if [ $USERID -ne 0 ]
 then
