@@ -3,8 +3,6 @@
 USERID=$(id -u)
 
 LOGS_FOLDER="/var/log/shellscripts.logs"
-LOG_FILE=$( echo $0 | cut -d "." -f1 )
-TIMESTAMP=$?(date +%Y-%m-%d-%H-%M-%S)
 
 VALIDATE(){
 if [ $1 -ne 0 ]
@@ -15,8 +13,6 @@ else
    echo "$2...SUCCESS"
 fi
 }
-
-echo "script started exectuing at "
 
 if [ $USERID -ne 0 ]
 then
