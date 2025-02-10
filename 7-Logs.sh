@@ -26,11 +26,11 @@ if [ $USERID -ne 0 ]
    exit
 fi
 
-dnf list installed mysql  &>>$LOG_FILE_NAME
+dnf list installed mysql &>>$LOG_FILE_NAME
 
 if [ $? -ne 0 ]
 then
-    dnf install mysql  &>>$LOG_FILE_NAME
+    dnf install mysql &>>$LOG_FILE_NAME
     VALIDATE $? "installing mysql"
 else 
    echo "mysql is already...INSTALLED"
@@ -38,11 +38,11 @@ fi
 
 #################################
 
-dnf list installed git  &>>$LOG_FILE_NAME
+dnf list installed git &>>$LOG_FILE_NAME
 
 if [ $? -ne 0 ]
 then
-    dnf install git   &>>$LOG_FILE_NAME
+    dnf install git &>>$LOG_FILE_NAME
     VALIDATE $? "installing git"
 else
    echo "Git is already...installed"
