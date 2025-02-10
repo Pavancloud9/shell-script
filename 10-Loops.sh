@@ -33,7 +33,7 @@ then
 dnf install mysql  &>>$LOG_FILE_NAME
   VALIDATE $? "Installing mysql"
 else
-   echo "Installing MYSQL...Already Installed"
+   echo "MYSQL...Already Installed"
 fi
 
 ###############################################
@@ -45,7 +45,7 @@ then
 dnf install git
   VALIDATE $? "Installing Git"
 else
-   echo "Installing Git..Already installed"
+   echo "Git..Already installed"
 fi
 
 for package in $@
