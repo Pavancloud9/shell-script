@@ -28,9 +28,10 @@ fi
 ####################################################
 
 dnf list installed mysql  &>>$LOG_FILE_NAME
+
 if [ $? -ne 0 ]
 then
-dnf install mysql  &>>$LOG_FILE_NAME
+dnf install mysql &>>$LOG_FILE_NAME
   VALIDATE $? "Installing mysql"
 else
    echo "MYSQL...Already Installed"
@@ -38,7 +39,7 @@ fi
 
 ###############################################
 
-dnf list installed git  &>>$LOG_FILE_NAME
+dnf list installed git &>>$LOG_FILE_NAME
 
 if [ $? -ne 0 ]
 then
