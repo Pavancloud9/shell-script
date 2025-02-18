@@ -45,10 +45,10 @@ fi
 
 for software in $@
 do
-  dnf list installed $software
+  dnf list installed $software &>>$LOG_FILE_NAME
   if [ $? -ne 0 ]
 then
-   dnf list install $software
+   dnf list install $software &>>$LOG_FILE_NAME
    VALIDATE $? "Installing $software"
 else
    echo "$software...already installed"
