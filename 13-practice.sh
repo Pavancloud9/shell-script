@@ -42,3 +42,15 @@ then
 else
    echo "Already Git....Installed"
 fi
+
+for software in $@
+do
+  dnf list installed $software
+  if [ $? -ne 0 ]
+then
+   dnf list install $software
+   VALIDATE $? "Installing $software"
+else
+   echo "$software...already installed"
+fi
+done
