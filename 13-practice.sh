@@ -48,7 +48,7 @@ do
   dnf list installed $software &>>$LOG_FILE_NAME
   if [ $? -ne 0 ]
 then
-   dnf list install $software &>>$LOG_FILE_NAME
+   dnf list install $software -y &>>$LOG_FILE_NAME
    VALIDATE $? "Installing $software"
 else
    echo "$software...already installed"
