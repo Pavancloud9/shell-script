@@ -42,12 +42,3 @@ then
 else
    echo "Already Git....Installed"
 fi
-
-dnf list installed nginx &>>$LOG_FILE_NAME
-if [ $? -ne 0 ]
-then
-   dnf install nginx &>>$LOG_FILE_NAME
-   VALIDATE $? "Installing nginx"
-else
-   echo "Already nginx....Installed"
-fi
