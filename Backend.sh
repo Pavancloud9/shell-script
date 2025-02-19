@@ -34,13 +34,13 @@ dnf module enable nodejs:20 -y &>>$LOG_FILE_NAME
 VALIDATE $? "enabling nodejs 20"
 
 dnf install nodejs -y &>>$LOG_FILE_NAME
-VALIDATE "Installing nodejs"
+VALIDATE $? "Installing nodejs"
 
 useradd expense &>>$LOG_FILE_NAME
-VALIDATE "adding expense user"
+VALIDATE $? "adding expense user"
 
 mkdir /app &>>$LOG_FILE_NAME
-VALIDATE "creating app directory"
+VALIDATE $? "creating app directory"
 
 curl -o /tmp/backend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip &>>$LOG_FILE_NAME
 VALIDATE $? "Downloading backend"
