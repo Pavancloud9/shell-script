@@ -10,10 +10,10 @@ LOG_FILE_NAME="$LOGS_FOLDER/$LOG_FILE-$TIMESTAMP.log"
 VALIDATE(){
   if [ $? -ne 0 ]
 then
-   echo "$1...Failure"
+   echo "$1... Failure"
    exit
 else
-   echo "$2...Success"
+   echo "$2... Success"
 fi
 }
 
