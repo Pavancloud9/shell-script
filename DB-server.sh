@@ -27,13 +27,13 @@ fi
 
 echo "Script started executing at: $TIMESTAMP" &>>$LOG_FILE_NAME 
 
-dnf install mysql-server -y &>>$LOG_FILE_NAME
-VALIDATE $? "Installing mysql"
+dnf install mysql-server -y
+VALIDATE $? "Installing mysql server"
 
-systemctl enable mysqld &>>$LOG_FILE_NAME
+systemctl enable mysqld
 VALIDATE $? "enabling mysql server"
 
-systemctl start mysqld &>>$LOG_FILE_NAME
-VALIDATE $? "starting mysql server"
+systemctl start mysqld
+VALIDATE $? "starting mysqld"
 
-mysql -h mysql.pavancloud9.online -u root -pExpenseApp@1
+mysql_secure_installation --set-root-pass ExpenseApp@1
