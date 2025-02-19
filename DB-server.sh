@@ -36,4 +36,4 @@ VALIDATE $? "enabling mysql server"
 systemctl start mysqld &>>$LOG_FILE_NAME
 VALIDATE $? "starting mysql server"
 
-mysql -h pavancloud9.online -u root -pExpenseApp@1
+mysql -h mysql.pavancloud9.online -u root -pExpenseApp@1
