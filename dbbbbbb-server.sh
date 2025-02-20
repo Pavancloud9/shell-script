@@ -44,3 +44,4 @@ then
     VALIDATE $? "setting up mysql server password"
 else
    echo "mysql password setup already done...SKIPPING"
+fi
