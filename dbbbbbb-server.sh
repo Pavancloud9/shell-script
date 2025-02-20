@@ -22,6 +22,7 @@ CHECK_ROOT(){
 then
     echo "ERROR: You must have SUDO access to perform"
     exit
+fi
 }
 
 echo "Script started executing at $TIMESTAMP"
@@ -43,4 +44,3 @@ then
     VALIDATE $? "setting up mysql server password"
 else
    echo "mysql password setup already done...SKIPPING"
-fi
