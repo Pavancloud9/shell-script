@@ -25,7 +25,9 @@ then
 fi
 }
 
-echo "Script started executing at $TIMESTAMP"
+echo "Script started executing at $TIMESTAMP" &>>$LOG_FILE_NAME
+
+CHECK_ROOT
 
 dnf install mysql-server -y &>>$LOG_FILE_NAME
 VALIDATE $? "Installing mysql server"
