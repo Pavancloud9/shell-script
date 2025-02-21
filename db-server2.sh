@@ -14,6 +14,8 @@ then
     exit
 else 
     echo "$2....FAILURE"
+else
+    echo "$2...already installed"
 fi
 }
 
