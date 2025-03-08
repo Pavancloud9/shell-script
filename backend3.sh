@@ -27,16 +27,16 @@ fi
 
 echo "script started executing at: $TIMESTAMP"
 
-dnf module disable nodejs -y
+dnf module disable nodejs -y &>>$LOG_FILE_NAME
 VALIDATE $? "disabling default nodejs"
 
-dnf module enable nodejs:20 -y
+dnf module enable nodejs:20 -y &>>$LOG_FILE_NAME
 VALIDATE $? "enabling nodejs20"
 
-dnf install nodejs -y
+dnf install nodejs -y &>>$LOG_FILE_NAME
 VALIDATE $? "Installing nodejs"
 
-id expense
+id expense &>>$LOG_FILE_NAME
     if [ $? -ne 0 ]
 then
     useradd expense
@@ -45,38 +45,38 @@ else
    echo "expense user already exists...SKIPPING"
 fi
 
-mkdir -p /app
+mkdir -p /app &>>$LOG_FILE_NAME
 VALIDATE $? "creating app directory"
 
-curl -o /tmp/backend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip
+curl -o /tmp/backend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip &>>$LOG_FILE_NAME
 VALIDATE $? "downloading application code"
 
 cd /app
 rm -rf /app/*
 
-unzip /tmp/backend.zip
+unzip /tmp/backend.zip &>>$LOG_FILE_NAME
 VALIDATE $? "unzipping backend application code"
 
-npm install
+npm install &>>$LOG_FILE_NAME
 VALIDATE $? "installing dependecies"
 
 cp /home/ec2-user/shell-script /etc/systemd/system/backend.service
 
 #Preparing mysql schema
 
-dnf install mysql -y
+dnf install mysql -y &>>$LOG_FILE_NAME
 VALIDATE $? "Installing mysql"
 
-mysql -h mysql.pavancloud9.online -uroot -pExpenseApp@1 < /app/schema/backend.sql
+mysql -h mysql.pavancloud9.online -uroot -pExpenseApp@1 < /app/schema/backend.sql &>>$LOG_FILE_NAME
 VALIDATE $? "Setting up the transactions schema and tables"
 
-systemctl daemon-reload
+systemctl daemon-reload &>>$LOG_FILE_NAME
 VALIDATE $? "daemon-reload"
 
-systemctl enable backend
+systemctl enable backend &>>$LOG_FILE_NAME
 VALIDATE $? "enabling backend"
 
-systemctl restart backend
+systemctl restart backend &>>$LOG_FILE_NAME
 VALIDATE $? "daemon-reload"
 
 
