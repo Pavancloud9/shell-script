@@ -77,7 +77,7 @@ systemctl enable backend &>>$LOG_FILE_NAME
 VALIDATE $? "enabling backend"
 
 systemctl restart backend &>>$LOG_FILE_NAME
-VALIDATE $? "daemon-reload"
+VALIDATE $? "restarting backend"
 
 
 
