@@ -55,7 +55,7 @@ cd /app
 rm -rf /app/*
 
 unzip /tmp/backend.zip
-VALIDATE $? "unzipping baapplication code"
+VALIDATE $? "unzipping backend application code"
 
 npm install
 VALIDATE $? "installing dependecies"
