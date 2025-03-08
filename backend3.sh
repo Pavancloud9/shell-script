@@ -60,7 +60,7 @@ VALIDATE $? "unzipping backend application code"
 npm install &>>$LOG_FILE_NAME
 VALIDATE $? "installing dependecies"
 
-cp /home/ec2-user/shell-script /etc/systemd/system/backend.service
+cp /home/ec2-user/shell-script/backend.service.sh /etc/systemd/system/backend.service
 
 #Preparing mysql schema
 
