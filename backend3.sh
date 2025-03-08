@@ -60,7 +60,24 @@ VALIDATE $? "unzipping baapplication code"
 npm install
 VALIDATE $? "installing dependecies"
 
-cp 
+cp /home/ec2-user/shell-script /etc/systemd/system/backend.service
+
+#Preparing mysql schema
+
+dnf install mysql -y
+VALIDATE $? "Installing mysql"
+
+mysql -h mysql.pavancloud9.online -uroot -pExpenseApp@1 < /app/schema/backend.sql
+VALIDATE $? "Setting up the transactions schema and tables"
+
+systemctl daemon-reload
+VALIDATE $? "daemon-reload"
+
+systemctl enable backend
+VALIDATE $? "enabling backend"
+
+systemctl restart backend
+VALIDATE $? "daemon-reload"
 
 
 
