@@ -53,4 +53,3 @@ VALIDATE $? "copied expense code"
 
 systemctl restart nginx &>>$LOG_FILE_NAME
 VALIDATE $? "restarting nginx server"
-
