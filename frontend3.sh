@@ -36,21 +36,21 @@ VALIDATE $? "enabling nginx"
 systemctl start nginx &>>$LOG_FILE_NAME
 VALIDATE $? "starting nginx"
 
-rm -rf /usr/share/nginx/html/*
+rm -rf /usr/share/nginx/html/* &>>$LOG_FILE_NAME
 VALIDATE $? "removing default nginx code"
 
 curl -o /tmp/frontend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip
 VALIDATE $? "downloading expense code"
 
-cd /usr/share/nginx/html
+cd /usr/share/nginx/html &>>$LOG_FILE_NAME
 VALIDATE $? "moving to nginx directory"
 
-unzip /tmp/frontend.zip
+unzip /tmp/frontend.zip &>>$LOG_FILE_NAME
 VALIDATE $? "unzipping frontend code"
 
-cp /home/ec2-user/shell-script/expense.conf /etc/nginx/default.d/expense.conf
+cp /home/ec2-user/shell-script/expense.conf /etc/nginx/default.d/expense.conf &>>$LOG_FILE_NAME
 VALIDATE $? "copied expense code"
 
-systemctl restart nginx
+systemctl restart nginx &>>$LOG_FILE_NAME
 VALIDATE $? "restarting nginx server"
 
