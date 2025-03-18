@@ -33,7 +33,7 @@ then
     USAGE
 fi
 
-if [ -d $SOURCE_DIR ]
+if [ ! -d $SOURCE_DIR ]
 then
     echo "$SOURCE_DIR Does not exits...please check"
 fi
