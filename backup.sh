@@ -7,7 +7,7 @@ DAYS=${3:-14}
 LOGS_FOLDER="/home/ec2-user/shell-script-logs"
 LOG_FILE=$(echo $0 )
 TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
-LOG_FILE_NAME="$LOGS_FOLDER/$LOG_FILE-$TIMESTAMP"
+LOG_FILE_NAME="$LOGS_FOLDER/$LOG_FILE-$TIMESTAMP.log"
 
 VALIDATE(){
    if [ $1 -ne 0 ]
@@ -21,7 +21,7 @@ fi
 
 USAGE(){
       echo "USAGE:: sh backup.sh <SOURCE_DIR> <DEST_DIR>"
-
+      
 }
 
 if [ $# -lt 2 ]
