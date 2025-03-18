@@ -2,7 +2,7 @@
 
 SOURCE_DIR=$1
 DEST_DIR=$2
-DAYS=${3:-14} 
+DAYS=${3:-14}
 
 LOGS_FOLDER="/home/ec2-user/shellscript-logs"
 LOG_FILE=$(echo $0 )
@@ -22,11 +22,12 @@ fi
 mkdir -p /home/ec2-user/shellscript-logs
 
 USAGE(){
-      echo "USAGE:: sh backup.sh <SOURCE_DIR> <DEST_DIR>"
-
+    echo "USAGE:: sh backup.sh <SOURCE_DIR> <DEST_DIR>"
+    exit
 }
 
 if [ $# -lt 2 ]
-then 
-     USAGE  
+then
+    USAGE
 fi
+
