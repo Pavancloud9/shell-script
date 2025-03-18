@@ -16,6 +16,7 @@ then
     exit
 else
     echo "$2...FAILURE"
+fi
 }
 
 USAGE(){
