@@ -21,7 +21,7 @@ fi
 
 mkdir -p /home/ec2-user/shellscript-logs
 
-echo "script started executing at:$TIMESTAMP" 
+echo "script started executing at:$TIMESTAMP" &>>$LOG_FILE_NAME
 
 USAGE(){
     echo "USAGE:: sh backup.sh <SOURCE_DIR> <DEST_DIR>"
