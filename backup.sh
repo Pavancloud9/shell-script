@@ -33,7 +33,12 @@ then
     USAGE
 fi
 
-if [ ! -d $SOURCE_DIR ]
+if [ -d $SOURCE_DIR ]
 then
-    echo "$SOURCE_DIR Does not exits...please check"
+    echo "$SOURCE_DIR Does not exists...please check"
+fi
+
+if [ -d $DEST_DIR ]
+then
+  echo "$DEST_DIR does not exists...please check"
 fi
