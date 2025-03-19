@@ -45,7 +45,7 @@ then
   exit
 fi
 
-FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS)    Linux command
-
+FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS)    
+# above is Linux command
 
 echo "Files are: $FILES"
