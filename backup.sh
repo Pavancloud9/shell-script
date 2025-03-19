@@ -50,6 +50,7 @@ if [ -n "$FILES" ]
 then
    echo "Files are: $FILES"
    ZIP_FILE="$DEST_DIR/app-logs-$TIMESTAMP.zip"
+   find $SOURCE_DIR -name "*.log" -mtime +$DAYS | zip -@ "$ZIP_FILE"
 else
    echo "no files to zip"
 fi
