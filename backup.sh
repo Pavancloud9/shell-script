@@ -52,4 +52,3 @@ if [ -n "$FILES" ]  # This is TRUE , files are there
 then
    echo "Files are: $FILES"
    ZIP_FILE="$DEST_DIR/app-logs-$TIMESTAMP.zip"  #with 
-   
