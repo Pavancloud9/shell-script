@@ -62,6 +62,7 @@ then
 else
    echo "ERROR:: Failed to create Zip file"
    exit
+fi
 else
    echo "ERROR:: No files to found"
 fi
