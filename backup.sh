@@ -51,6 +51,7 @@ FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS)   #It will find out the fi
 if [ -n "$FILES" ]  # This is true files are there
 then
    echo "Files are $FILES"
+   ZIP_FILE="$DEST_DIR/app-logs-$TIMESTAMP.zip"  # with this name we are going to save
 else
    echo "ERROR:: No files to found"
 fi
