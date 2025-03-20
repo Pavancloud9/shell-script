@@ -56,7 +56,7 @@ then
 
 #
 
-   if [ -d "$ZIP_FILE" ]
+   if [ -f "$ZIP_FILE" ]
 then
     echo "Zip file has been created successfully"
 else
