@@ -1,0 +1,11 @@
+#!/bin/bash
+
+find $SOURCE_DIR -name "*.log" -mtime +$DAYS | zip -@ "$ZIP_FILE"
+   if [ -f "$ZIP_FILE" ]
+then
+    echo "Successfully created zip file"
+else
+    echo "ERROR: Failed to create zip file"
+    
+   echo "no files to zip"
+fi

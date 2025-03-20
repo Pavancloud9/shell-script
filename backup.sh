@@ -28,29 +28,28 @@ USAGE(){
     exit
 }
 
-if [ $# -lt 2 ]
+if [ $# -lt 2 ] 
 then
     USAGE
 fi
 
-if [ ! -d $SOURCE_DIR ]
+if [ ! -d $SOURCE_DIR ]   #If SOURCE directory does not exists throw below error msg
 then
     echo "$SOURCE_DIR Does not exists...please check"
     exit
 fi
 
-if [ ! -d $DEST_DIR ]
+if [ ! -d $DEST_DIR ]  #If DESTINATION directory does not exists throw below error msg
 then
   echo "$DEST_DIR does not exists...please check"
 fi
 
-FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS)    
+# If both SOURCE and DESTINATION directories exits we need to find the files now
 
-if [ -n "$FILES" ]
+FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS)   #It will find out the files
+
+if [ -n "$FILES" ]  # This is TRUE , files are there
 then
    echo "Files are: $FILES"
-   ZIP_FILE="$DEST_DIR/app-logs-$TIMESTAMP.zip"
-   find $SOURCE_DIR -name "*.log" -mtime +$DAYS | zip -@ "$ZIP_FILE"
-else
-   echo "no files to zip"
-fi
+   ZIP_FILE="$DEST_DIR/app-logs-$TIMESTAMP.zip"  #with 
+   
