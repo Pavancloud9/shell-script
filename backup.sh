@@ -59,6 +59,12 @@ then
    if [ -f "$ZIP_FILE" ]
 then
     echo "Zip file has been created successfully"
+while read -r filepath # here filepath is the variable name, you can give any name
+        do
+            echo "Deleting file: $filepath" &>>$LOG_FILE_NAME
+            rm -rf $filepath
+            echo "Deleted file: $filepath"
+        done <<< $FILES
 else
    echo "ERROR:: Failed to create Zip file"
    exit
