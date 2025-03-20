@@ -1,11 +1,13 @@
-#!/bin/bash
 
-find $SOURCE_DIR -name "*.log" -mtime +$DAYS | zip -@ "$ZIP_FILE"
-   if [ -f "$ZIP_FILE" ]
+
+
+if [ -n "$FILES" ]  # This is TRUE , files are there
 then
-    echo "Successfully created zip file"
+   echo "Files are: $FILES"
+   ZIP_FILE="$DEST_DIR/app-logs-$TIMESTAMP.zip"  #with this name we are going to save
+
+find $SOURCE_DIR -name "*.log" -mtime +$DAYS | zip -@ "$ZIP_FILE"   
+#it will zip all the files and it will give with zip name
 else
-    echo "ERROR: Failed to create zip file"
-    
-   echo "no files to zip"
+    echo "no files found"
 fi
