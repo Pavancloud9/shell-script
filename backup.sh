@@ -46,13 +46,22 @@ fi
 
 # If both SOURCE and DESTINATION directories exits we need to find the files now
 
-FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS)   #It will find out the files
+FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS)   # find cmnd will find the files
 
 if [ -n "$FILES" ]  # This is true files are there
 then
    echo "Files are $FILES"
    ZIP_FILE="$DEST_DIR/app-logs-$TIMESTAMP.zip"  # with this name we are going to save
-   find $SOURCE_DIR -name "*.log" -mtime +$DAYS | zip -@ "$ZIP_FILE"  
+   find $SOURCE_DIR -name "*.log" -mtime +$DAYS | zip -@ "$ZIP_FILE" 
+
+#
+
+   if [ -d "$ZIP_FILE" ]
+then
+    echo "Zip file has been created successfully"
+else
+   echo "ERROR:: Failed to create Zip file"
+   exit
 else
    echo "ERROR:: No files to found"
 fi
