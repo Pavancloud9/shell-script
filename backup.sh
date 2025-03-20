@@ -55,3 +55,4 @@ then
 
 find $SOURCE_DIR -name "*.log" -mtime +$DAYS | zip -@ "$ZIP_FILE"   
 #it will zip all the files and it will give with zip name
+fi
