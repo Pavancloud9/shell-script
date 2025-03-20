@@ -47,3 +47,10 @@ fi
 # If both SOURCE and DESTINATION directories exits we need to find the files now
 
 FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS)   #It will find out the files
+
+if [ -n "$FILES" ]  # This is true files are there
+then
+   echo "Files are $FILES"
+else
+   echo "ERROR:: No files to found"
+fi
