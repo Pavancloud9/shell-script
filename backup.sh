@@ -54,7 +54,6 @@ then
    ZIP_FILE="$DEST_DIR/app-logs-$TIMESTAMP.zip"  # with this name we are going to save
    find $SOURCE_DIR -name "*.log" -mtime +$DAYS | zip -@ "$ZIP_FILE" 
 
-#
 
    if [ -f "$ZIP_FILE" ]
 then
